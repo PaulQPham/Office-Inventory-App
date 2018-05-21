@@ -14,13 +14,13 @@ namespace Project1.src.furnitureClasses
 
         public Chair(string color, bool isPadded, bool hasArms) : base(color)
         {
-            this.color = color;
+            this.Color = color;
             this.isPadded = isPadded;
             this.hasArms = hasArms;
         }
         override public void Display(TextWriter textWriter)
         {
-            textWriter.WriteLine("Chair" + "\nColor: " + color + "\nPadded: " + isPadded + "\nArms: " + hasArms);
+            textWriter.WriteLine("Chair" + "\nColor: " + Color + "\nPadded: " + isPadded + "\nArms: " + hasArms);
         }
     }
 }

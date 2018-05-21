@@ -14,13 +14,13 @@ namespace Project1.src.furnitureClasses
 
         public Lamp(string color, int height, int wattage) : base(color)
         {
-            this.color = color;
+            this.Color = color;
             this.height = height;
             this.wattage = wattage;
         }
         override public void Display(TextWriter textWriter)
         {
-            textWriter.WriteLine("Lamp" + "\nColor: " + color + "\nHeight: " + height + " inches \nWattage: " + wattage + "w");
+            textWriter.WriteLine("Lamp" + "\nColor: " + Color + "\nHeight: " + height + " inches \nWattage: " + wattage + "w");
         }
     }
 }

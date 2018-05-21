@@ -15,14 +15,14 @@ namespace Project1.src.furnitureClasses
 
         public Table(string color, int length, int width, int height) : base(color)
         {
-            this.color = color;
+            this.Color = color;
             this.length = length;
             this.width = width;
             this.height = height;
         }
         override public void Display(TextWriter textWriter)
         {
-            textWriter.WriteLine("Table" + "\nColor: " + color + "\nLength: " + length + "inches\nWidth: " + width + "inches\nHeight: " + height + "inches");
+            textWriter.WriteLine("Table" + "\nColor: " + Color + "\nLength: " + length + "inches\nWidth: " + width + "inches\nHeight: " + height + "inches");
         }
     }
 }
