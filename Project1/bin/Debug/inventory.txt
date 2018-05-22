@@ -1,0 +1,9 @@
+Chair 
+Color: Blue 
+Padded: False 
+Arms: True
+Table
+Color: White
+Length: 200 inches
+Width: 100 inches
+Height: 100 inches

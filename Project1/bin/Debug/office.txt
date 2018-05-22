@@ -1,0 +1,21 @@
+Chair 
+Color: Brown 
+Padded: True 
+Arms: True
+Chair 
+Color: Black 
+Padded: False 
+Arms: False
+Lamp 
+Color: Silver 
+Height: 20 inches 
+Wattage: 20w
+Chair 
+Color: White 
+Padded: True 
+Arms: True
+Table
+Color: Brown
+Length: 300 inches
+Width: 100 inches
+Height: 80 inches

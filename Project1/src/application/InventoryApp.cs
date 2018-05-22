@@ -1,6 +1,7 @@
 ﻿using Project1.src.furnitureClasses;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,11 +15,14 @@ namespace Project1.src.application
         static Inventory inventory;
         static Office office;
         static OfficeQuery officeQuery;
+        static TextWriter inventoryOutput, officeOutput;
         public static void Main(string[] args)
         {
             office = new Office();
             inventory = new Inventory();
             officeQuery = new OfficeQuery();
+            inventoryOutput = new StreamWriter("inventory.txt");
+            officeOutput = new StreamWriter("office.txt");
 
             office.SetInventory(inventory);
             officeQuery.SetOffice(office);
@@ -67,8 +71,19 @@ namespace Project1.src.application
 
             officeQuery.QueryByColor("Brown");
 
-            Console.WriteLine("Press enter to teminate...");
+            Console.WriteLine("Press enter to terminate and save inventory and office layout...");
             Console.ReadLine();
+
+            inventory.Write(inventoryOutput); //Write current furniture to Project1/bin/inventory.txt
+
+            //Write current furniture to Project1/bin/office.txt
+            foreach (Furniture item in office.furnitureInOffice) 
+            {
+                item.Write(officeOutput);
+            }
+
+            officeOutput.Close();
+            inventoryOutput.Close();
         }
 
 

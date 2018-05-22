@@ -40,11 +40,19 @@ namespace Project1.src.Tests
         }
 
         [TestMethod()]
-        public void GetNumberOfItemsTest()
+        public void SuccesfulGetNumberOfItemsTest()
         {
             office.furnitureInOffice = new List<Furniture> { chair2, chair3, chair4, table2 };
 
             Assert.AreEqual(3, query.GetNumberOfItems("Chair").Count());
+        }
+
+        [TestMethod()]
+        public void GetNumberOfItemsTestWhenItemIsNotAFurnitureClass()
+        {
+            office.furnitureInOffice = new List<Furniture> { chair2, chair3, chair4, table2 };
+
+            Assert.AreEqual(0, query.GetNumberOfItems("NotFurniture").Count());
         }
 
         [TestMethod()]
