@@ -18,9 +18,10 @@ namespace Project1.src.furnitureClasses
             this.isPadded = isPadded;
             this.hasArms = hasArms;
         }
-        override public void Display(TextWriter textWriter)
+        //coverage for this method is included in InventoryTests.cs
+        override public void Write(TextWriter textWriter)
         {
-            textWriter.WriteLine("Chair" + "\nColor: " + Color + "\nPadded: " + isPadded + "\nArms: " + hasArms);
+            textWriter.WriteLine("Chair \nColor: {0} \nPadded: {1} \nArms: {2}", Color, isPadded, hasArms);
         }
     }
 }

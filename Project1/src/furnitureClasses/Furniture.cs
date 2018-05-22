@@ -18,6 +18,7 @@ namespace Project1.src.furnitureClasses
 
         internal string Color { get => color; set => color = value; }
 
-        public abstract void Display(TextWriter textWriter);     
+        //Each child class must implement Display()
+        public abstract void Write(TextWriter textWriter);     
     }
 }

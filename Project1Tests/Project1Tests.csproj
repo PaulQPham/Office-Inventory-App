@@ -58,7 +58,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\furnitureClasses\FurnitureTests.cs" />
-    <Compile Include="src\furnitureClasses\LampTests.cs" />
+    <Compile Include="src\InventoryTests.cs" />
+    <Compile Include="src\OfficeQueryTests.cs" />
     <Compile Include="src\OfficeTests.cs" />
   </ItemGroup>
   <ItemGroup>

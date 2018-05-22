@@ -28,6 +28,8 @@ namespace Project1.src
             furnitureInOffice.RemoveAt(idOfFurnitureInOffice);
             inventory.currentInventory.Add(furnitureToBeMoved);
         }
+
+        //Getter and Setter methods do not require testing
         public void SetInventory(Inventory inventory)
         {
             this.inventory = inventory;

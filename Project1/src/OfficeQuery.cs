@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Project1.src
 {
-    class OfficeQuery
+    //Training said to include these methods in office class but that breaks Single Responsibility Principle so I created a separate class
+    public class OfficeQuery
     {
         private Office office;
 
@@ -16,9 +17,26 @@ namespace Project1.src
             office = new Office();
         }
 
+        public int GetNumberOfItems(string typeOfFurniture)
+        {
+            var queryResults =
+                from items in office.furnitureInOffice
+                where items.GetType().Name == typeOfFurniture
+                select items;
+
+            Console.WriteLine(queryResults.Count() + " " + typeOfFurniture + "(s) found: ");
+            DisplayQuery(queryResults);
+
+            return queryResults.Count();
+        }
+
+        //Class can further be modified to add more queries like below
+        //However the best choice design-wise is to allow this class to be inherited from and be extended that way
+        //In which case the class constructor should take in a query in string format and construct a LINQ query that way 
+        //This would keep signatures the same rather than have different query methods to fufill Liskov Substitution Principle
         public void QueryByColor(string color)
         {
-           var queryResults =
+            var queryResults =
                 from items in office.furnitureInOffice
                 where items.Color == color
                 select items;
@@ -27,17 +45,20 @@ namespace Project1.src
 
             DisplayQuery(queryResults);
         }
-        public void DisplayQuery(IEnumerable<Furniture> queryResults)
+
+        public void SetOffice(Office office)
+         {
+            this.office = office;
+         }
+
+        private void DisplayQuery(IEnumerable<Furniture> queryResults)
         {
             foreach(Furniture item in queryResults)
             {
-                item.Display(Console.Out);
+                item.Write(Console.Out);
                 Console.WriteLine();
             }
         }
-        public void SetOffice(Office office)
-        {
-            this.office = office;
-        }
+        
     }
 }

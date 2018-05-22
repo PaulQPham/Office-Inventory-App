@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\Inventory\" />
+    <Folder Include="src\Office\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
