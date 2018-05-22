@@ -23,6 +23,10 @@ namespace Project1.src.application
             office.SetInventory(inventory);
             officeQuery.SetOffice(office);
 
+
+            Console.WriteLine("Office/Inventory App\n\nPress enter to generate and display furniture...");
+            Console.ReadLine();
+
             //Generate some furniture
             //UI can be made so that users can create furniture and since it would only call constructors no logic is involved
             Chair chair1 = new Chair("Blue", false, true);
@@ -44,6 +48,7 @@ namespace Project1.src.application
 
             inventory.Write(Console.Out);
 
+            Console.WriteLine("Furniture added to inventory\n\nPress enter to add some furniture to the office...");
             Console.ReadLine();
 
             office.AddFromInventory(1); //chair2
@@ -52,12 +57,17 @@ namespace Project1.src.application
             office.AddFromInventory(1); //chair4
             office.AddFromInventory(2); //table 2
 
+            Console.WriteLine("Three chairs, one lamp, and one table added to office from inventory\n\nPress enter to get all the chairs in the office...");
+            Console.ReadLine();
+
             officeQuery.GetNumberOfItems("Chair");
 
+            Console.WriteLine("Press enter to get all the brown items in the office...");
             Console.ReadLine();
 
             officeQuery.QueryByColor("Brown");
 
+            Console.WriteLine("Press enter to teminate...");
             Console.ReadLine();
         }
 

@@ -17,33 +17,34 @@ namespace Project1.src
             office = new Office();
         }
 
-        public int GetNumberOfItems(string typeOfFurniture)
+        public IEnumerable<Furniture> GetNumberOfItems(string typeOfFurniture)
         {
             var queryResults =
                 from items in office.furnitureInOffice
                 where items.GetType().Name == typeOfFurniture
                 select items;
 
-            Console.WriteLine(queryResults.Count() + " " + typeOfFurniture + "(s) found: ");
+            Console.WriteLine(queryResults.Count() + " " + typeOfFurniture + "(s) found: \n");
             DisplayQuery(queryResults);
 
-            return queryResults.Count();
+            return queryResults;
         }
 
         //Class can further be modified to add more queries like below
         //However the best choice design-wise is to allow this class to be inherited from and be extended that way
         //In which case the class constructor should take in a query in string format and construct a LINQ query that way 
         //This would keep signatures the same rather than have different query methods to fufill Liskov Substitution Principle
-        public void QueryByColor(string color)
+        public IEnumerable<Furniture> QueryByColor(string color)
         {
             var queryResults =
                 from items in office.furnitureInOffice
                 where items.Color == color
                 select items;
 
-            Console.WriteLine(queryResults.Count() + " items found: ");
-
+            Console.WriteLine(queryResults.Count() + " items found: \n");
             DisplayQuery(queryResults);
+
+            return queryResults;
         }
 
         public void SetOffice(Office office)

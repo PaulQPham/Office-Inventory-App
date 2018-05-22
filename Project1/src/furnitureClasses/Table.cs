@@ -20,10 +20,9 @@ namespace Project1.src.furnitureClasses
             this.width = width;
             this.height = height;
         }
-        //coverage for this method is included in InventoryTests.cs
         override public void Write(TextWriter textWriter)
         {
-            textWriter.WriteLine("Table\nColor: {0}\nLength: {1} inches\nWidth: {2} inches\nHeight: {3} inches", Color, length, width, height);
+            textWriter.Write("Table\nColor: {0}\nLength: {1} inches\nWidth: {2} inches\nHeight: {3} inches\n", Color, length, width, height);
         }
     }
 }

@@ -18,10 +18,9 @@ namespace Project1.src.furnitureClasses
             this.height = height;
             this.wattage = wattage;
         }
-        //coverage for this method is included in InventoryTests.cs
         override public void Write(TextWriter textWriter)
         {
-            textWriter.WriteLine("Lamp \nColor: {0} \nHeight: {1} inches \nWattage: {2}w", Color, height, wattage);
+            textWriter.Write("Lamp \nColor: {0} \nHeight: {1} inches \nWattage: {2}w\n", Color, height, wattage);
         }
     }
 }

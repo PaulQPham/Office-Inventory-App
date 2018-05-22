@@ -42,14 +42,19 @@ namespace Project1.src.Tests
         [TestMethod()]
         public void GetNumberOfItemsTest()
         {
-            office.furnitureInOffice = new List<Furniture>{ chair2, chair3, chair4, table2 };
-            Assert.AreEqual(3, query.GetNumberOfItems("Chair"));
+            office.furnitureInOffice = new List<Furniture> { chair2, chair3, chair4, table2 };
+
+            Assert.AreEqual(3, query.GetNumberOfItems("Chair").Count());
         }
 
         [TestMethod()]
         public void QueryByColorTest()
         {
+            office.furnitureInOffice = new List<Furniture> { chair2, chair3, chair4, table2 };
+            IEnumerable<Furniture> expectedReturn = new List<Furniture> { chair2, table2 };
+            var returnedFurniture = query.QueryByColor("Brown");
 
+            Assert.IsTrue(returnedFurniture.SequenceEqual(expectedReturn));
         }
     }
 }
